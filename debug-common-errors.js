@@ -1,20 +1,6 @@
 /*
 
-Overview
-In this activity, you will receive three short JavaScript programs,
-each containing a different type of error (syntax, runtime, and logic)
-along with a brief explanation of what the program is supposed to do.
-Your task is to identify the error, correct it, and verify the fix.
-
-Instructions
-Debugging Steps:
-  - Identify the error type (syntax, runtime, or logic).
-  - Use Debugging Techniques such as reading error messages, using console.log(), or testing in small steps.
-  - Propose a Fix that addresses the error.
-  - Verify the Solution by running the code again to ensure the program works as intended.
-
-Reflection:
-Think about which debugging methods you found most useful and how you might apply them in future projects.
+NOTE: The provided problematic code snippets were commented out in order to successfully run the program with my revised code.
 
 */
 
@@ -23,7 +9,9 @@ Think about which debugging methods you found most useful and how you might appl
 // ------ Program A ------
 // Description: This program is intended to display a simple prompt in the console but fails to run.  
 
-//console.log("Welcome to the bootcamp
+/*
+console.log("Welcome to the bootcamp
+*/
 
 // What’s Wrong? 
 // ANSWER: Syntax Error - It is missing the closing double-quotes and semicolon  
@@ -31,9 +19,9 @@ Think about which debugging methods you found most useful and how you might appl
 // Proposed solution:
 console.log("Welcome to the bootcamp!");
 
-
 // ------ Program B ------
 // Description: This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
+
 /*
 let numbers = [2, 4, "eight"];
 for (let i = 0; i < numbers.length; i++) {
@@ -41,6 +29,7 @@ for (let i = 0; i < numbers.length; i++) {
   console.log(doubled);
 }
 */
+
 // What’s Wrong?
 // ANSWER: Logic Errors - the string "eight" is not a number that can be multiplied by 2
 
@@ -53,6 +42,7 @@ for (let i = 0; i < numbers.length; i++) {
 
 // ------ Program C (Logic Error) ----- 
 // Description: This snippet of code is supposed to check if a given number is prime (i.e., divisible only by 1 and itself). However, it incorrectly marks some numbers as prime or not prime.
+
 /*
 function isPrime(num) {
   if (num < 2) return false;
@@ -65,6 +55,7 @@ function isPrime(num) {
 }
 console.log(isPrime(7)); // Expected true but gets false
 */
+
 // What’s Wrong?
 // ANSWER: Logic Error: The function had the returns set backwards, checking if a number was prime, then saying false when it was, and true when it was not.
 
@@ -72,10 +63,10 @@ console.log(isPrime(7)); // Expected true but gets false
 function isPrime(num) {
   if (num < 2) return false; 
   for (let i = 2; i < num; i++) {
-    if (num % i !== 0) {
-      return true;  // changed to return false, since the code checks if the number CAN be divisible by another number besides itself, which makes it NOT prime.
+    if (num % i !== 0) { // changed comparison to check if num could NOT be divisible by i, therefore returning true
+      return true; 
     }
   }
-  return false; // Changed to return true, because if the number passed through the above code without returning false, then it must be prime. 
+  return false;  
 }
 console.log(isPrime(23)); 
